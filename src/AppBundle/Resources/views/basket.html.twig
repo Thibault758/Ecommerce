@@ -1,0 +1,44 @@
+{% extends "layout.html.twig" %}
+
+  {% block body %}
+
+    <div id="Panier">
+
+    {% if nbArticles < 0 %}
+      <h1>Votre panier est vide !</h1>
+    {% else %}
+      <h1>Votre Panier</h1>
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Nom du produit</th>
+            <th scope="col">Quantitée</th>
+            <th scope="col">Prix</th>
+          </tr>
+        </thead>
+        <tbody style="background-color:white;">
+          {% for i in 0..nbArticles %}
+            <tr>
+              <td>
+                <div class="divNomBasket">
+                  <span class="tdNom">{{ app.session.get('panier')['nom'][i] }}</span> <span class="tdDel"><a href="{{ path('deleteArticle', {'nom': app.session.get('panier')['nom'][i] }) }}"><button type="button" class="btn btn-outline-danger"><i class="fa fa-remove"></i></button></a></span>
+                </div>
+              </td>
+              <td>{{ app.session.get('panier')['qte'][i] }}</td>
+              <td>{{ app.session.get('panier')['prix'][i] }}€</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div class="divValidBasket">
+        <a href="{{ path('emptyBasket') }}"><button type="button" class="btn btn-outline-danger">Vider le panier</button></a>
+        <div>
+          <p>Montant total: {{ totalPrice }}€</p>
+          <a href="#"><button type="button" class="btn btn-outline-primary">Valider la commande</button></a>
+        </div>
+      </div>
+    {% endif %}
+
+    </div>
+
+  {% endblock %}

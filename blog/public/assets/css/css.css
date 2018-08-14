@@ -1,0 +1,92 @@
+body {
+  background-color: #c3dcf2;
+  margin: 0;
+  font-family: "Bad Script";
+}
+h1 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+}
+.red {
+  color: white;
+  font-weight: bold;
+}
+header {
+  text-align: center;
+  background-color: #225574;
+  color: white;
+  box-shadow: 1px 1px 10px black;
+}
+nav {
+  background-color: #3f8ead;
+  position: fixed;
+  top: 185px;
+  padding: 10px;
+  width: 130px;
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+  box-shadow: 5px 5px 20px black;
+}
+nav a:hover{
+  font-weight: bold;
+}
+section {
+  width: 60%;
+  margin: 35px auto;
+  text-align: center;
+}
+.avatar {
+  width: 80px;
+  border-radius: 100px;
+}
+.article {
+  background-color: #a1daf5;
+  width: 70%;
+  margin: 30px auto;
+  border: 3px black solid;
+}
+.article img {
+  width: 300px;
+}
+.artSelect {
+  display: flex;
+}
+.boutonAdmin {
+  margin: 0 auto 10px auto;
+  display: block;
+  background-color: grey;
+  width: 100px;
+  border-radius: 50px;
+  transition: transform 0.5s;
+  box-shadow: 1px 1px 5px black;
+}
+
+.boutonAdmin:hover {
+  transform: scale(1.2);
+}
+.categories {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+.categories div {
+  background-color: #225574;
+  border-radius: 20px;
+  padding: 5px 10px;
+  box-shadow: 1px 1px 10px black;
+  text-align: center;
+  line-height: 1.5rem;
+}
+.categories div a {
+  font-size: 1rem;
+  color: #a1daf5;
+}
+.nav {
+  color: black;
+  text-decoration: underline;
+  margin: 0px 20px;
+}

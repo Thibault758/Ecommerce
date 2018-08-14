@@ -1,0 +1,23 @@
+home:
+    path:   /
+    defaults: {_controller: AppBundle:Default:Index}
+
+article:
+    path:   /article/{id}
+    defaults: {_controller: AppBundle:Default:article}
+
+addShoping:
+    path:   /add/{id}
+    defaults: {_controller: AppBundle:Default:addShoping}
+
+basket:
+    path:   /basket
+    defaults: {_controller: AppBundle:Default:basket}
+
+emptyBasket:
+    path:   /emptyBasket
+    defaults: {_controller: AppBundle:Default:emptyBasket}
+
+deleteArticle:
+    path:   /deleteArticle/{nom}
+    defaults: {_controller: AppBundle:Default:deleteArticle}

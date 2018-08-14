@@ -1,0 +1,16 @@
+{% extends "layout.html.twig" %}
+
+{% block body %}
+  <section id="article">
+    <div>
+      <h3>{{ article.name }}</h3>
+      <p>{{ article.descript }}</p>
+      <img src="{{ asset('bundles/app/pictures/' ~ article.image ) }}" alt="">
+    </div>
+    <div>
+      <p>Quantitées restante: {{ article.quantity }}</p>
+      <p>Prix: {{ article.price }}€</p>
+      <a href="{{ path('addShoping', { 'id': article.id }) }}"> Ajouter au panier </a>
+    </div>
+  </section>
+{% endblock %}

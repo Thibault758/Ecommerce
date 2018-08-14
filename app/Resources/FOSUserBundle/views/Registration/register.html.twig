@@ -1,0 +1,24 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+    <form action="{{ path('fos_user_registration_register') }}" method="POST">
+        <div class="form-group" id="fos_user_registration_form">
+            {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'Votre Email' } }) }}
+            {{ form_errors(form.email) }}
+            <br>
+            {{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder': 'Votre pseudo' } }) }}
+            {{ form_errors(form.username) }}
+            <br>
+            {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder': 'Votre mot de passe' } }) }}
+            {{ form_errors(form.plainPassword.first) }}
+            <br>
+            {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder': 'Confirmer le mot de passe' } }) }}
+            {{ form_errors(form.plainPassword.second) }}
+
+            {{ form_rest(form) }}
+
+        </div>
+        <div>
+            <input class="btn btn-lg btn-primary btn-block" type="submit" value="S'enregistrer">
+        </div>
+{% endblock fos_user_content %}

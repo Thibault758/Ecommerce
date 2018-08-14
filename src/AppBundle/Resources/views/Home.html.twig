@@ -1,0 +1,33 @@
+{% extends "layout.html.twig" %}
+
+{% block body %}
+
+  <section id="artHome">
+    <article id="ecig">
+      <h1>Les 5 dernières nouveautés E-Cigarette :</h1>
+      <div class="contArt">
+        {% for ecig in ecigs %}
+          <div class="art">
+            <h3>{{ ecig.name}}</h3>
+            <img src="{{ asset('bundles/app/pictures/' ~ ecig.image ) }}" alt="image">
+            <a href="{{ path('article', { 'id': ecig.id }) }}">Voir l'article</a>
+          </div>
+        {% endfor %}
+      </div>
+    </article>
+
+    <article id="eliquide">
+      <h1>Les 5 dernières nouveautés E-Liquides :</h1>
+      <div class="contArt">
+        {% for eliquide in eliquides %}
+          <div class="art">
+            <h3>{{ eliquide.name}}</h3>
+            <img src="{{ asset('bundles/app/pictures/' ~ eliquide.image ) }}" alt="image">
+            <a href="{{ path('article', { 'id': eliquide.id }) }}">Voir l'article</a>
+          </div>
+        {% endfor %}
+      </div>
+    </article>
+  </section>
+
+{% endblock %}
