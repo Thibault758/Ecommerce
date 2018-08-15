@@ -52,17 +52,22 @@
 
         <div>
           <div class="connect bg-light">
-            <p>Bienvenue | <a href="{{ path('fos_user_security_login') }}">Connection</a></p>
-            <a class="panier" href="{{ path('basket') }}">
+              <p>Bienvenue
+                  {% if app.user is defined and app.user is not null  %}
+                       <b>{{ app.user.username }}</b> | <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+                  {%  else %}
+                     | <a href="{{ path('fos_user_security_login') }}">Connection</a>
+                  {% endif %}
+              </p>
+              <a class="panier" href="{{ path('basket') }}">
               <i class="fa fa-shopping-cart"></i> :
-              {% if app.session.get('nombre') is defined %}
-              {{ app.session.get('nombre') }}
-              {% else %}
-              0
-              {% endif %}
-              article(s)
-            </a>
-            <!-- {{ dump(app.session.get('panier'))}} -->
+                  {% if app.session.get('nombre') is defined %}
+                      {{ app.session.get('nombre') }}
+                  {% else %}
+                     0
+                 {% endif %}
+                 article(s)
+              </a>
           </div>
         </div>
       </header>
